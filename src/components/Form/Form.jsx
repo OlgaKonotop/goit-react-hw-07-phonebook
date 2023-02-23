@@ -10,19 +10,13 @@ export const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    // const itemContact = {
-    //   name: form.name.value,
-    //   number: form.number.value,
-    //   id: nanoid(),
-    // };
+    const itemContact = {
+      name: form.name.value,
+      number: form.number.value,
+      id: nanoid(),
+    };
 
-    dispatch(
-      addContact({
-        name: form.name.value,
-        number: form.number.value,
-        id: nanoid(),
-      })
-    );
+    dispatch(addContact(itemContact));
     form.reset();
   };
 
